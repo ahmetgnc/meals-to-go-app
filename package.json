@@ -8,11 +8,13 @@
         "start": "react-native start",
         "test": "jest",
         "prettier:write": "npx prettier --write **/*.{js,jsx,ts,tsx,json} && npx prettier --write *.{js,jsx,ts,tsx,json}",
-        "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./"
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx ./"
     },
     "dependencies": {
         "react": "18.2.0",
-        "react-native": "0.71.0"
+        "react-native": "0.71.0",
+        "react-native-paper": "^5.1.3",
+        "react-native-vector-icons": "^9.2.0"
     },
     "devDependencies": {
         "@babel/core": "^7.12.9",

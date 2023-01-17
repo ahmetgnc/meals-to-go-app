@@ -1,19 +1,13 @@
-import React from 'react';
-import {
-    Platform,
-    SafeAreaView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    View,
-} from 'react-native';
+import React, { FC } from 'react';
+import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
+import RestaurantsScreen from './src/features/restaurants';
 
-function App(): JSX.Element {
+export type Props = {}
+const App: FC<Props> = () => {
     return (
-        <SafeAreaView>
-            <View style={styles.container}>
-                <Text>First Commmit</Text>
-            </View>
+        <SafeAreaView style={styles.container}>
+            <StatusBar />
+            <RestaurantsScreen />
         </SafeAreaView>
     );
 }
@@ -21,7 +15,16 @@ function App(): JSX.Element {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+        marginTop: StatusBar.currentHeight,
+    },
+
+    search: {
+        padding: 16,
+    },
+    list: {
+        flex: 1,
+        padding: 16,
+        backgroundColor: '#03C988',
     },
 });
 
