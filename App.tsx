@@ -1,16 +1,21 @@
-import React, { FC } from 'react';
-import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
-import RestaurantsScreen from './src/features/restaurants';
+import React, {FC} from 'react';
+import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import {ThemeProvider} from 'styled-components/native';
+import {theme} from './src/infrastructure/theme';
+import {RestaurantsScreen} from './src/features/restaurants/screens';
 
-export type Props = {}
+export type Props = {};
+
 const App: FC<Props> = () => {
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar />
-            <RestaurantsScreen />
+            <ThemeProvider theme={theme}>
+                <StatusBar />
+                <RestaurantsScreen />
+            </ThemeProvider>
         </SafeAreaView>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
